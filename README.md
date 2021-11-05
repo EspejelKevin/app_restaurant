@@ -69,3 +69,6 @@ the interface to perform CRUD operations*
 
 **This file can be import from Workbench MySQL**
 
+## Configuration additional
+*The file db.py has my credentials to connect to MySQL, it is neccesary to change those data*
+
