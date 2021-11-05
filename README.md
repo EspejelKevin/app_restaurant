@@ -8,15 +8,23 @@
 
 ## Requirements 📋
 
-*Inside the project there is a file called **requirements.txt**, this file can be used to install
-the necessaty packages that the project needs.*
+*Use git clone o download zip to have this project in your machine*
+*Navigate to the carpet of the project*
 
 ### Virtual environments
-*The next path is necessary to activate the virtual environment (Windows): *
+*You need create a virtual environment (Windows): *
 ```
-venv\Scripts\activate
+pip install virtualenv
+virtualenv venv 
 ```
+*Now, you need to activate the virtual environment (Windows and PowerShell): *
+```
+.\venv\Scripts\activate
+```
+
 ### How to install the packages?
+*Inside the project there is a file called **requirements.txt**, this file can be used to install
+the necessaty packages that the project needs.*
 
 *You need type the next command inside a terminal like: **CMD or Powershell**: *
 ```
