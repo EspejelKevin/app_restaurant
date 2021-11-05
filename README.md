@@ -66,5 +66,6 @@ the interface to perform CRUD operations*
 
 ## DB Included
 *I have included the file DBRestaurantsApp.sql to get the database and the stored procedure that you need to work with the project*
-**This file cab be import from Workbench MySQL**
+
+**This file can be import from Workbench MySQL**
 
