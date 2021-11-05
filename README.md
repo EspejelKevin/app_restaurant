@@ -32,6 +32,14 @@ pip install -r requirements.txt
 ```
 **You must navigate to the root of the project**
 
+## Configuration additional
+*The file db.py has my credentials to connect to MySQL, it is neccesary to change those data*
+
+## DB Included
+*I have included the file DBRestaurantsApp.sql to get the database and the stored procedure that you need to work with the project*
+
+**This file can be import from Workbench MySQL**
+
 ## How to run the project? ⚙️
 
 ### Way 1
@@ -72,11 +80,6 @@ the interface to perform CRUD operations*
 
 ![Alt text](./src/static/images/example.png?raw=true "Interface")
 
-## DB Included
-*I have included the file DBRestaurantsApp.sql to get the database and the stored procedure that you need to work with the project*
 
-**This file can be import from Workbench MySQL**
 
-## Configuration additional
-*The file db.py has my credentials to connect to MySQL, it is neccesary to change those data*
 
