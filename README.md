@@ -63,3 +63,8 @@ pip install -r requirements.txt
 the interface to perform CRUD operations*
 
 ![Alt text](./src/static/images/example.png?raw=true "Interface")
+
+## DB Included
+*I have included the file DBRestaurantsApp.sql to get the database and the stored procedure that you need to work with the project*
+**This file cab be import from Workbench MySQL**
+
