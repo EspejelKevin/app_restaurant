@@ -1,0 +1,23 @@
+{% with success = get_flashed_messages(category_filter=["success"]) %} 
+  {% if success %}
+    <div class="alert alert-success alert-dismissible" role="alert">
+      <strong><i class="fas fa-check-circle"></i></strong>
+      {% for message in success %}
+        <strong>{{message}}</strong>
+      {% endfor %}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  {% endif %} 
+{% endwith %} 
+
+{% with errors = get_flashed_messages(category_filter=["error"]) %} 
+  {% if errors %}
+  <div class="alert alert-danger alert-dismissible" role="alert">
+    <strong><i class="fas fa-exclamation-circle"></i></strong>
+    {% for message in errors %}
+      <strong>{{message}}</strong>
+    {% endfor %}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {% endif %} 
+{% endwith %}

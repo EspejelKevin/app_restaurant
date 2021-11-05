@@ -1,0 +1,229 @@
+{% extends "base.html" %} {% block title %}- Inicio {% endblock %} 
+
+{% block content %}
+
+<main id="main">
+  <div class="container">
+    <div class="row g-0">
+      <div class="col-lg-12 d-flex">
+        <div
+          id="content-main"
+          class="justify-content-center align-self-center mx-auto my-5"
+        >
+          <div class="card">
+            <div class="card-header text-center bg-warning">
+              <h2>New Restaurant</h2>
+            </div>
+            <div class="card-body">
+              <form action="/" method="POST" class="px-5">
+                <div class="md-form row">
+                  <div class="col">
+                    <input
+                      type="text"
+                      name="id"
+                      class="form-control"
+                      id="idInput"
+                      required
+                      autofocus
+                    />
+                    <label for="idInput">ID</label>
+                  </div>
+                  <div class="col">
+                    <input
+                      type="number"
+                      name="rating"
+                      class="form-control"
+                      id="ratingInput"
+                      required
+                      max="4"
+                      min="0"
+                    />
+                    <label for="ratingInput">Rating</label>
+                  </div>
+                  <div class="col">
+                    <input
+                      type="text"
+                      name="name"
+                      class="form-control"
+                      id="nameInput"
+                      required
+                    />
+                    <label for="nameInput">Restaurant name</label>
+                  </div>
+                </div>
+                <div class="md-form row">
+                  <div class="col">
+                    <input
+                      type="text"
+                      name="site"
+                      class="form-control"
+                      id="siteInput"
+                      required
+                    />
+                    <label for="siteInput">Site (URL)</label>
+                  </div>
+                  <div class="col">
+                    <input
+                      type="email"
+                      name="email"
+                      class="form-control"
+                      id="emailInput"
+                      required
+                    />
+                    <label for="emailInput">Email</label>
+                  </div>
+                </div>
+                <div class="md-form row">
+                  <div class="col">
+                    <input
+                      type="text"
+                      name="phone"
+                      class="form-control"
+                      id="phoneInput"
+                      required
+                    />
+                    <label for="phoneInput">Phone</label>
+                  </div>
+                  <div class="col">
+                    <input
+                      type="text"
+                      name="street"
+                      class="form-control"
+                      id="streetInput"
+                      required
+                    />
+                    <label for="streetInput">Street</label>
+                  </div>
+                </div>
+                <div class="md-form row">
+                  <div class="col">
+                    <input
+                      type="text"
+                      name="city"
+                      class="form-control"
+                      id="cityInput"
+                      required
+                    />
+                    <label for="cityInput">City</label>
+                  </div>
+                  <div class="col">
+                    <input
+                      type="text"
+                      name="state"
+                      class="form-control"
+                      id="stateInput"
+                      required
+                    />
+                    <label for="stateInput">State</label>
+                  </div>
+                </div>
+                <div class="md-form row">
+                  <div class="col">
+                    <input
+                      type="text"
+                      name="latitude"
+                      class="form-control"
+                      id="latitudeInput"
+                      required
+                    />
+                    <label for="latitudeInput">Latitude</label>
+                  </div>
+                  <div class="col">
+                    <input
+                      type="text"
+                      name="longitude"
+                      class="form-control"
+                      id="longitudeInput"
+                      required
+                    />
+                    <label for="longitudeInput">Longitude</label>
+                  </div>
+                </div>
+                <div class="md-form">
+                  <button class="btn btn-success btn-block">
+                    Create <i class="fas fa-plus"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<section id="products">
+  <div class="container-fluid">
+    <div class="col-lg-12 d-flex">
+        <div
+          id="content-products"
+          class="
+            justify-content-center
+            align-self-center
+            mx-auto
+            my-3
+            text-center
+          "
+        >
+          <h2>Restaurants available</h2>
+        </div>
+      </div>
+    <div class="row">
+      {% for restaurant in data %}
+      <div class="col-lg-4 d-flex">
+        <div
+          id="content-products"
+          class="justify-content-center align-self-center mx-auto my-3"
+        >
+          <div class="card text-center">
+            <div class="card-header"><strong>Restaurant: {{restaurant.2}}</strong></div>
+            <div class="card-body elegant-color text-white rounded-bottom bg-secondary">
+              <h4 class="card-title">
+                <span>Rating: {{restaurant.1}}</span>
+              </h4>
+              <hr class="hr-light" />
+              <p class="card-text white-text mb-4">
+                <span>Site: {{restaurant.3}}</span><br>
+                <span>Email: {{restaurant.4}}</span><br>
+                <span>Phone: {{restaurant.5}}</span><br>
+              </p>
+              <div class="btn-group" role="group" aria-label="Basic example">
+                <form action="/delete/restaurant/{{restaurant.0}}" method="POST">
+                  <button type="submit" class="btn btn-danger btn-sm">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </form>
+                <a
+                  href="/update/restaurant/{{restaurant.0}}"
+                  type="button"
+                  class="btn btn-warning btn-sm"
+                >
+                  <i class="fas fa-pen"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% else %}
+      <div class="col-lg-12 d-flex">
+        <div
+          id="content-products"
+          class="
+            justify-content-center
+            align-self-center
+            mx-auto
+            my-3
+            text-center
+          "
+        >
+          <h2>No restaurants to show</h2>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% endblock %}

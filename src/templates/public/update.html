@@ -1,0 +1,167 @@
+{% extends "base.html" %} {% block content %}
+<section id="update-restaurant">
+  <div class="container">
+    <div class="row g-0">
+      <div class="col-lg-12">
+        <div
+          id="content-edit-restaurant"
+          class="justify-content-center align-self-center mx-auto my-5"
+        >
+          <div class="card">
+            <div class="card-header text-center bg-warning">
+              <h2>Edit restaurant</h2>
+            </div>
+            <div class="card-body">
+              <form
+                action="/update/restaurant/{{restaurant.0}}"
+                method="POST"
+                class="px-3"
+              >
+                <div class="md-form row">
+                  <div class="col">
+                    <input
+                      type="text"
+                      name="id"
+                      value="{{restaurant.0}}"
+                      class="form-control"
+                      id="idInput"
+                      required
+                      autofocus
+                    />
+                    <label for="idInput">ID</label>
+                  </div>
+                  <div class="col">
+                    <input
+                      type="number"
+                      name="rating"
+                      value="{{restaurant.1}}"
+                      class="form-control"
+                      id="ratingInput"
+                      required
+                      max="4"
+                      min="0"
+                    />
+                    <label for="ratingInput">Rating</label>
+                  </div>
+                  <div class="col">
+                    <input
+                      type="text"
+                      name="name"
+                      value="{{restaurant.2}}"
+                      class="form-control"
+                      id="nameInput"
+                      required
+                    />
+                    <label for="nameInput">Restaurant name</label>
+                  </div>
+                </div>
+                <div class="md-form row">
+                  <div class="col">
+                    <input
+                      type="text"
+                      name="site"
+                      value="{{restaurant.3}}"
+                      class="form-control"
+                      id="siteInput"
+                      required
+                    />
+                    <label for="siteInput">Site (URL)</label>
+                  </div>
+                  <div class="col">
+                    <input
+                      type="email"
+                      name="email"
+                      value="{{restaurant.4}}"
+                      class="form-control"
+                      id="emailInput"
+                      required
+                    />
+                    <label for="emailInput">Email</label>
+                  </div>
+                </div>
+                <div class="md-form row">
+                  <div class="col">
+                    <input
+                      type="text"
+                      name="phone"
+                      value="{{restaurant.5}}"
+                      class="form-control"
+                      id="phoneInput"
+                      required
+                    />
+                    <label for="phoneInput">Phone</label>
+                  </div>
+                  <div class="col">
+                    <input
+                      type="text"
+                      name="street"
+                      value="{{restaurant.6}}"
+                      class="form-control"
+                      id="streetInput"
+                      required
+                    />
+                    <label for="streetInput">Street</label>
+                  </div>
+                </div>
+                <div class="md-form row">
+                  <div class="col">
+                    <input
+                      type="text"
+                      name="city"
+                      value="{{restaurant.7}}"
+                      class="form-control"
+                      id="cityInput"
+                      required
+                    />
+                    <label for="cityInput">City</label>
+                  </div>
+                  <div class="col">
+                    <input
+                      type="text"
+                      name="state"
+                      value="{{restaurant.8}}"
+                      class="form-control"
+                      id="stateInput"
+                      required
+                    />
+                    <label for="stateInput">State</label>
+                  </div>
+                </div>
+                <div class="md-form row">
+                  <div class="col">
+                    <input
+                      type="text"
+                      name="latitude"
+                      value="{{restaurant.9}}"
+                      class="form-control"
+                      id="latitudeInput"
+                      required
+                    />
+                    <label for="latitudeInput">Latitude</label>
+                  </div>
+                  <div class="col">
+                    <input
+                      type="text"
+                      name="longitude"
+                      value="{{restaurant.10}}"
+                      class="form-control"
+                      id="longitudeInput"
+                      required
+                    />
+                    <label for="longitudeInput">Longitude</label>
+                  </div>
+                </div>
+                <div class="md-form">
+                  <button class="btn btn-success btn-block">
+                    Edit <i class="fas fa-pen"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
